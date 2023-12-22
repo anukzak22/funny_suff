@@ -1,0 +1,80 @@
+/* Style for the overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(152, 152, 152, 1); /* semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  /* Style for the alert container */
+  .mac-alert {
+    width: 500px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-family: Arial, sans-serif; 
+  }
+  
+  /* Style for the alert title */
+
+  .mac-alert-title {
+    margin-top: 0;
+    font-size: 1em;
+    color: #585858; 
+    font-weight: 300; 
+  }
+  
+  /* Style for the alert message */
+  .mac-alert-message {
+    margin-bottom: 15px;
+    color: #585858;
+    font-weight: 300;
+    font-size: 0.8em; /* Lighter font weight */
+  }
+  
+  /* Style for the buttons container */
+  .mac-alert-buttons {
+    text-align: right;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    font-size: 0; /* Remove whitespace between buttons */
+  }
+  
+  /* Style for the alert buttons */
+  .mac-alert-button {
+    padding: 8px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #007aff; /* Blue text color */
+    cursor: pointer;
+    font-weight: 500; /* Increased font weight */
+    font-size: 14px; /* Button text size */
+    transition: color 0.3s; /* Transition effect for color change */
+  }
+  
+  /* Adjust the spacing between buttons and text */
+  .mac-alert-button:first-child {
+    margin-left: 0;
+  }
+  
+  /* Style for the alert buttons on hover */
+  .mac-alert-button:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Style for the "Yes" button */
+  .mac-alert-button:second-child {
+    font-weight: bold; /* Make the "Yes" button bolder */
+  }
+  

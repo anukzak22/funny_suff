@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tiredness Check</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Reference to the external CSS file -->
+  <script>
+    function checkTiredness() {
+      function askTiredness() {
+        var overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+
+        var macAlert = document.createElement('div');
+        macAlert.classList.add('mac-alert');
+
+        var title = document.createElement('h2');
+        title.classList.add('mac-alert-title');
+        title.textContent = '';
+
+        var message = document.createElement('p');
+        message.classList.add('mac-alert-message');
+        message.textContent = 'Are you ready to go to sleep ?';
+
+        var buttons = document.createElement('div');
+        buttons.classList.add('mac-alert-buttons');
+
+        var yesButton = document.createElement('button');
+        yesButton.classList.add('mac-alert-button');
+        yesButton.textContent = 'Yes';
+        yesButton.addEventListener('click', function() {
+          alert("Finally the right answer");
+          window.close(); // Closes the window if tired
+        });
+
+        var noButton = document.createElement('button');
+        noButton.classList.add('mac-alert-button');
+        noButton.textContent = 'No';
+        noButton.addEventListener('click', function() {
+          document.body.removeChild(overlay); // Remove the overlay
+          askTiredness(); // Asks the question again if not tired
+        });
+
+        buttons.appendChild(noButton);
+        buttons.appendChild(yesButton);
+
+        macAlert.appendChild(title);
+        macAlert.appendChild(message);
+        macAlert.appendChild(buttons);
+
+        overlay.appendChild(macAlert);
+        document.body.appendChild(overlay);
+      }
+      askTiredness();
+    }
+  </script>
+</head>
+<body onload="checkTiredness()">
+  <h1>Welcome!</h1>
+  <p>This is a tiredness check. Please answer honestly!</p>
+</body>
+</html>
